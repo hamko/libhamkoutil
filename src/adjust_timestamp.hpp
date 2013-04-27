@@ -1,7 +1,9 @@
+#ifndef ADJUST_TIMESTAMP_HPP
+#define ADJUST_TIMESTAMP_HPP
+
 #include <cmath>
 #include <iostream>
 #include <vector>
-#include "hamkoutil.hpp"
 
 using namespace std;
 
@@ -37,8 +39,6 @@ template <class T> void adjust_timestamp(vector<T> xt, vector<vector<T> > &y, ve
              rety[h][i] = y[h][j] + (xt[i] - y[0][j]) / (y[0][j+1] - y[0][j]) * (y[h][j+1] - y[h][j]);
      }
 }
-template void adjust_timestamp<double> (vector<double> xt, vector<vector<double> > &y, vector<vector<double> > &rety); 
-template void adjust_timestamp<float> (vector<float> xt, vector<vector<float> > &y, vector<vector<float> > &rety);
 
 template <class T> T calc_rms(vector<T> x, vector<T> y)
 {
@@ -57,5 +57,25 @@ template <class T> T calc_rms(vector<T> x, vector<T> y)
 
     return sqrt(sum / num);
 }
-template double calc_rms(vector<double> x, vector<double> y);
-template float calc_rms(vector<float> x, vector<float> y);
+
+template <class T> T calc_rms(const vector<vector<T> > &x, const vector<vector<T> > &y)
+{
+    if (!x.size() || !y.size() || x.size() != y.size() || x[0].size() != y[0].size())
+        return -1;
+    int num = 0;
+    T sum = 0.0;
+    for (int i = 0; i < (int)x.size(); i++) {
+        for (int j = 0; j < (int)x[0].size(); j++) {
+            if (isnan(x[i][j]) || isnan(y[i][j]))
+                continue;
+            num++;
+            sum += (x[i][j] - y[i][j]) * (x[i][j] - y[i][j]);
+        }
+    }
+    if (!num)
+        return -1;
+
+    return sqrt(sum / num);
+}
+
+#endif

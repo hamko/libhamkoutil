@@ -1,4 +1,7 @@
-#include "hamkoutil.hpp"
+#ifndef INPUT_FILE_TO_VEC_HPP
+#define INPUT_FILE_TO_VEC_HPP
+
+#include <vector>
 #include <fstream>
 #include <sstream>
 #include <string.h>
@@ -6,7 +9,7 @@
 
 using namespace std;
 
-template <class T> void input_file_to_vector_using(char* filename, vector<T> &v, int index)
+template <class T> void fvec(char* filename, vector<T> &v, int index)
 {
     ifstream ifs(filename);
     string s;
@@ -28,10 +31,8 @@ template <class T> void input_file_to_vector_using(char* filename, vector<T> &v,
     }
     ifs.close();
 }
-template void input_file_to_vector_using<double> (char* filename, vector<double> &v, int index);
-template void input_file_to_vector_using<float> (char* filename, vector<float> &v, int index);
 
-template <class T> void input_file_to_vector_vector(char* filename, vector<vector<T> > &vv)
+template <class T> void fvecvec(char* filename, vector<vector<T> > &vv)
 {
     ifstream ifs(filename);
     string s;
@@ -55,5 +56,5 @@ template <class T> void input_file_to_vector_vector(char* filename, vector<vecto
     }
     ifs.close();
 }
-template void input_file_to_vector_vector<double> (char* filename, vector<vector<double> > &vv);
-template void input_file_to_vector_vector<float> (char* filename, vector<vector<float> > &vv);
+
+#endif

@@ -36,3 +36,6 @@ install:
 	rm -f /usr/lib/$(PROD_LINK)
 	ln -s /usr/lib/$(PROD_VER) /usr/lib/$(PROD_LINK)
 	cp -f hamkoutil.hpp /usr/include/
+	mkdir -p /usr/include/hamkoutil
+	cp -p *.hpp /usr/include/hamkoutil 2> /dev/null
+	cp -p *.h /usr/include/hamkoutil 2> /dev/null
