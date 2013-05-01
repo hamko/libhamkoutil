@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string.h>
 #include <cstdlib>
+#include <cstdlib>
 
 using namespace std;
 
@@ -56,5 +57,56 @@ template <class T> void fvecvec(char* filename, vector<vector<T> > &vv)
     }
     ifs.close();
 }
+
+template <class T> void vecvecf(std::vector<std::vector<T> > &vv, const char* filename)
+{
+    std::ofstream ofs(filename);
+
+    if (!ofs) {
+        std::cerr << "ofs error" << std::endl;
+        exit(1);
+    }
+    for (int i = 0; i < (int)vv.size(); i++) {
+        for (int j = 0; j < (int)vv[0].size(); j++) {
+            ofs << vv[i][j] << " ";
+        }
+        ofs << std::endl;
+    }
+
+    ofs.close();
+}
+
+template <class T> void vecvecf_trans(std::vector<std::vector<T> > &vv, const char* filename)
+{
+    std::ofstream ofs(filename);
+
+    if (!ofs) {
+        std::cerr << "ofs error" << std::endl;
+        exit(1);
+    }
+    for (int j = 0; j < (int)vv[0].size(); j++) {
+        for (int i = 0; i < (int)vv.size(); i++) {
+            ofs << vv[i][j] << " ";
+        }
+        ofs << std::endl;
+    }
+
+    ofs.close();
+}
+
+template <class T> void vecf(std::vector<T> &v, const char* filename)
+{
+    std::ofstream ofs(filename);
+
+    if (!ofs) {
+        std::cerr << "ofs error" << std::endl;
+        exit(1);
+    }
+    for (int i = 0; i < (int)v.size(); i++) 
+        ofs << v[i] << std::endl;
+
+    ofs.close();
+}
+
 
 #endif
