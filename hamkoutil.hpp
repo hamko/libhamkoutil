@@ -5,5 +5,6 @@
 #include <hamkoutil/local_optimize.hpp>
 #include <hamkoutil/print_stl.hpp>
 #include <hamkoutil/adjust_timestamp.hpp>
+#include <hamkoutil/stopwatch_util.hpp>
 
 #endif
