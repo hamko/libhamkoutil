@@ -4,10 +4,22 @@
 *.o
 
 # Compiled Dynamic libraries
-*.so
+*.so*
 *.dylib
 
 # Compiled Static libraries
 *.lai
 *.la
 *.a
+
+#cmake
+CMakeCache.txt
+CMakeFiles/
+install_manifest.txt
+
+#Makefile
+#Makefile
+
+cmake_install.cmake
+*.swp
+*~
