@@ -6,12 +6,15 @@ SET(PROD hamkoutil)
 SET(SRCS
     stopwatch_util.cpp 
     local_optimize.cpp
+    Clusterizer.cpp
+    KMeansClusterizer.cpp
+    ClusterizerData.cpp
     )
 SET(HEADS hamkoutil.hpp)
 SET(INCLUDE_DIR hamkoutil)
 
 # フラグ
-SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2")
+SET(CMAKE_CXX_FLAGS "--std=c++11 -Wall -g -O3")
 # -I
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 # -oとソースファイル指定
