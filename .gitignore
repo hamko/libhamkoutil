@@ -16,10 +16,11 @@
 CMakeCache.txt
 CMakeFiles/
 install_manifest.txt
-
-#Makefile
-#Makefile
-
 cmake_install.cmake
+
+#vim
 *.swp
 *~
+
+#Makefile
+Makefile
