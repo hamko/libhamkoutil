@@ -14,7 +14,7 @@ public:
     ~KMeansClusterizer(void);
     void train(int cluster_num);
     size_t getCenterNum(void);
-    void clusterize(ClusterizerData* data);
+    int clusterize(vd& data);
     void printCenter(void);
 };
 

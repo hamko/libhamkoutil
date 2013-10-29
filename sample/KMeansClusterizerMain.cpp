@@ -19,12 +19,8 @@ int main(void)
     cl.printTrainData();
 
     // Test
-    ClusterizerData* testdata = new ClusterizerData(2);
-    testdata->setData(0, 450);
-    testdata->setData(1, 380);
-    cl.clusterize(testdata);
-    cout << "#Test" << endl;
-    testdata->print();
+    vd testdata = {450, 380};
+    cout << cl.clusterize(testdata) << "#Test" << endl;
     
 
     return 0;

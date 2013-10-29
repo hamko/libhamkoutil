@@ -14,7 +14,7 @@ public:
     size_t getTrainDataSize(void);
 
     virtual void train(int cluster_num) = 0;
-    virtual void clusterize(ClusterizerData* data) = 0;
+    virtual int clusterize(vd& data) = 0;
     void printTrainData(void);
 };
 

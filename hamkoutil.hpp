@@ -8,9 +8,12 @@
 #include <hamkoutil/adjust_timestamp.hpp>
 #include <hamkoutil/stopwatch_util.hpp>
 #include <hamkoutil/geometry.hpp>
+#include <hamkoutil/stl_metric.hpp>
 
 #include <hamkoutil/ClusterizerData.hpp>
 #include <hamkoutil/Clusterizer.hpp>
 #include <hamkoutil/KMeansClusterizer.hpp>
+
+#include <hamkoutil/Trajectory.hpp>
 
 #endif

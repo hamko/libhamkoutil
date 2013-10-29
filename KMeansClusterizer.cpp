@@ -103,7 +103,10 @@ int KMeansClusterizer::reviseCenter(void) {
     return 0;
 }
 
-// ClusterizerData.m_cluster_idに書き込む
-void KMeansClusterizer::clusterize(ClusterizerData* data) 
+int KMeansClusterizer::clusterize(vd& data)
 {
+    ClusterizerData tmp(data.sz);
+    for (size_t i = 0; i < tmp.getSize(); i++)
+        tmp.setData(i, data[i]);
+    return getMinimumClusterID(&tmp);
 }
