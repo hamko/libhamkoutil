@@ -9,6 +9,7 @@
 #include <hamkoutil/stopwatch_util.hpp>
 #include <hamkoutil/geometry.hpp>
 #include <hamkoutil/stl_metric.hpp>
+#include <hamkoutil/quant.hpp>
 
 #include <hamkoutil/ClusterizerData.hpp>
 #include <hamkoutil/Clusterizer.hpp>

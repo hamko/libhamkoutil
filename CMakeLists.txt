@@ -14,7 +14,7 @@ SET(HEADS hamkoutil.hpp)
 SET(INCLUDE_DIR hamkoutil)
 
 # フラグ
-SET(CMAKE_CXX_FLAGS "--std=c++11 -Wall -g -O3")
+SET(CMAKE_CXX_FLAGS "--std=c++0x -Wall -g -O3")
 # -I
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 # -oとソースファイル指定
